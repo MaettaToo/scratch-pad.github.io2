@@ -20,8 +20,12 @@
 
 function print(value) {
   // YOUR CODE BELOW HERE //
-  
-
+  //I: function takes input value as param
+  //O: input value logged to the console
+  //C:  none
+  //E: none
+  //console log input value 
+console.log(value);
   
   // YOUR CODE ABOVE HERE //
 }

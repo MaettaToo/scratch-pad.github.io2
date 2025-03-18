@@ -14,6 +14,14 @@
  */
 function length(string) {
     // YOUR CODE BELOW HERE //
+//I: function with string as param 
+//O:return number indicating string length
+//C: none
+//E: none
+
+// return string.length 
+    return string.length;
+
 
 
     
@@ -27,7 +35,17 @@ function length(string) {
  */
 function toLowerCase(string) {
     // YOUR CODE BELOW HERE //
-   
+//I: function takes one string as param
+//O: return input string in the lowercase
+//C: none
+//E: input string could be numbers, or no string input,
+if(string === ' ' ){
+    return null;
+} 
+    else{
+        return string.toLowerCase();
+console.log(string);
+}   
 
 
     // YOUR CODE ABOVE HERE //
@@ -38,7 +56,12 @@ function toLowerCase(string) {
  */
 function toUpperCase(string) {
     // YOUR CODE BELOW HERE //
-
+//I: function takes string as param
+//O: input string is returned in uppercase
+//C: none
+//E: empty strings, strings with as numbers
+//return string as uppercase using toUpperCase
+return string.toUpperCase();
 
 
     // YOUR CODE ABOVE HERE //
@@ -59,11 +82,18 @@ function toUpperCase(string) {
  */
 function toDashCase(string) {
     // YOUR CODE BELOW HERE //
-
+    //I: function takes string as param
+    //O: input string is returned with dashes 
+    //C: none
+    //E: none
+    // use .replace to add dashes between the space
+    return string.replaceAll(' ', '-').toLowerCase();
+    
+}
 
 
     // YOUR CODE ABOVE HERE //
-}
+
 
 /**
  * Given an input String and a single character, return true if the String
@@ -79,6 +109,17 @@ function toDashCase(string) {
  */
 function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
+//I: function takes an input string and a single character
+//O: return boolean true if first character of string begins with the single character input
+//C: none
+//E: needs to be case insensitive
+// create conditional stmt to determine if first character of string and input character match
+if(string[0].toUpperCase() === char  || string[0].toLowerCase() === char){
+    return true;
+} else{ 
+return false;
+}
+
 
     
 
@@ -99,8 +140,16 @@ function beginsWith(string, char) {
  */
 function endsWith(string, char) {
     // YOUR CODE BELOW HERE //
-
-
+//I: function takes an input string and a single character
+//O: return boolean true if last character of string begins with the single character input
+//C: none
+//E: needs to be case insensitive
+// create conditional stmt to determine if last character of string and input character match
+if(string[string.length - 1].toUpperCase() === char  || string[string.length - 1].toLowerCase() === char){
+    return true;
+} else{ 
+return false;
+}
 
     // YOUR CODE ABOVE HERE //
 }
@@ -112,7 +161,12 @@ function endsWith(string, char) {
  */
 function concat(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
+//I: function takes two strings
+//O: return the two input strings as one string 
+//C: none
+//E: none
+// return one string using the + operator
+return stringOne + stringTwo; 
 
 
     // YOUR CODE ABOVE HERE //
@@ -131,7 +185,13 @@ function concat(stringOne, stringTwo) {
 function join(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
     var args = Array.from(arguments);
-
+//I: function takes two strings
+//O: return all input strings joined together
+//C: pulls out all the arguments passed to it and stores them in an Array called args
+//E: none 
+// if arguments are in the array separate the elements using split
+return args.split(',').join(' ');
+// join the array together using join
 
     // YOUR CODE ABOVE HERE //
 }
