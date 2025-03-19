@@ -21,7 +21,19 @@
 
 function reverseString(input) {
     // YOUR CODE GOES BELOW HERE //
-    
+    //I: function takes one string as its param
+    //O: return new string with the input string in reverse order
+    //C: none
+    //E: none
+    // init var to collect the reversed string values
+    var output = ''; 
+    // init for loop to decrement over string and add values into holder string
+    for(var i = input.length - 1; i >= 0; i--){
+      output +=  input[i]//add each character to holder string ;
+        //return new string
+}     
+    return output;
+  
     
     
     
