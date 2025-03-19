@@ -35,8 +35,24 @@
 
 function greeter(hour) {
     // YOUR CODE BELOW HERE //
-    
-    
+    // I: function takes an integer represented as the hour of time
+    //O: log string dependent upon time of day,hour is 0-11 'Good Morning', hour is 12-16'Good Afternoon!', hour is 17-21 'Good Evening!', hour is 22-24 'Good Night!'  
+    //C: none
+    //E: none
+    // init conditional stmts chain to response dependent upon time
+    if(hour >= 0 && hour <= 11){
+        console.log('Good Morning!');
+    }
+        else if (hour >= 12 && hour <= 16){
+            console.log('Good Afternoon!');
+        }
+            else if (hour >= 17 && hour <= 21){
+                console.log('Good Evening!');
+            }
+                else if (hour >= 22 && hour <= 24){
+                    console.log('Good Night!');
+                }
+
     
     
     // YOUR CODE ABOVE HERE //
