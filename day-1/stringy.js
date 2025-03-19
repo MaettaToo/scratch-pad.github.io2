@@ -38,14 +38,8 @@ function toLowerCase(string) {
 //I: function takes one string as param
 //O: return input string in the lowercase
 //C: none
-//E: input string could be numbers, or no string input,
-if(string === ' ' ){
-    return null;
-} 
-    else{
-        return string.toLowerCase();
-console.log(string);
-}   
+//E: none
+        return string.toLowerCase(); 
 
 
     // YOUR CODE ABOVE HERE //
@@ -190,8 +184,11 @@ function join(stringOne, stringTwo) {
 //C: pulls out all the arguments passed to it and stores them in an Array called args
 //E: none 
 // if arguments are in the array separate the elements using split
-return args.split(',').join(' ');
+
+
 // join the array together using join
+    return args.join('');
+
 
     // YOUR CODE ABOVE HERE //
 }
@@ -207,6 +204,19 @@ return args.split(',').join(' ');
  */
 function longest(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
+//I: function takes two strings as param
+//O: return the longer of the two input strings
+//C: none
+//E: none
+//init conditional stmt to compare strings
+if(stringOne.length > stringTwo.length){
+    //return the longer string
+    return stringOne;
+}
+        else if(stringOne.length < stringTwo.length){
+            //if condition is met return longer string
+            return stringTwo;
+        }
 
 
 
@@ -222,6 +232,24 @@ function longest(stringOne, stringTwo) {
  */
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
+    //I: function takes two strings as param
+    //O: return the numbers 1,0, or -1, dependent upon the first strings alphabetical order, 1 if stringOne is earlier, -1 if stringTwo is earlier, 0 if they are equal
+    //C: none
+    //E: none
+    //init conditional stmt to determine order hierarchy of letters
+    if(stringOne < stringTwo){
+        // return 1 if stringOne is less than stringTwo
+        return 1;
+    }
+        else if (stringOne > stringTwo){
+            // return -1 if stringOne is greater than stringTwo
+            return -1; 
+        } 
+        else if (stringOne === stringTwo){
+            // return 0 if stringOne is equal to stringTwo
+            return 0;
+        }
+
 
     // YOUR CODE ABOVE HERE //
 }
@@ -236,7 +264,23 @@ function sortAscending(stringOne, stringTwo) {
  */
 function sortDescending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
+//I: function takes two strings as param
+    //O: return the numbers 1,0, or -1, dependent upon the first strings alphabetical order, 1 if stringOne is later, -1 if stringTwo is later, 0 if they are equal
+    //C: none
+    //E: none
+    //init conditional stmt to determine order hierarchy of letters
+    if(stringOne > stringTwo){
+        // return 1 if stringOne is appears later in the alphabet than stringTwo
+        return 1;
+    }
+        else if (stringOne < stringTwo){
+            // return -1 if stringTwo appears later in the alphabet than stringTwo
+            return -1; 
+        } 
+        else if (stringOne === stringTwo){
+            // return 0 if stringOne is equal to stringTwo
+            return 0;
+        }
 
 
 
