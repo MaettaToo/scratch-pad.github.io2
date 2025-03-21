@@ -35,6 +35,17 @@
 
 // YOUR CODE GOES BELOW HERE //
 function makeContact(id, nameFirst, nameLast) {
+  //I: function takes  number and two strings as param 
+  //O: return an object that has input values as values for the object keys
+  //C: none
+  //E: none
+  //
+        //return object
+        return {
+                  id: id,
+                  nameFirst: nameFirst,
+                  nameLast: nameLast
+                };
     
 } 
 
@@ -51,9 +62,22 @@ function makeContactList() {
       length:function(){
         return contacts.length;
       },
+      //add key value pair as function takes a contact object to be added to the contact-list.
       addContact: function(contact){
         contacts.push(contact)
       },
+      /*add key/value pair as function that takes a full-name String,returns the contact object if found in the contacts-list, or, 
+      undefined if the fullName does not match any contacts in the list.
+      */
+      findContact: function(fullName){
+        if (fullName){
+          return contacts;
+          }  
+            else{
+              return undefined;
+              }
+
+      }
     }
 }
 
