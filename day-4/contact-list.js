@@ -2,6 +2,8 @@
 
 'use strict';
 
+const { includes } = require("lodash");
+
 /**
  * 4: Contact List // Contacts
  * 
@@ -70,15 +72,26 @@ function makeContactList() {
       undefined if the fullName does not match any contacts in the list.
       */
       findContact: function(fullName){
-        if (fullName){
-          return contacts;
+        //init for loop to iterate over contacts array 
+        for (var i = 0; i < contacts.length; i++){
+          //create conditional stmt to determine if fullName is part of the contacts list
+          if (fullName.includes(contacts[i]['nameFirst']) && fullName.includes( contacts[i]['nameLast'])){
+            //return object from contacts array  
+            return contacts[i];
           }  
-            else{
-              return undefined;
+                else{// return undefined
+                    return undefined;
               }
 
       }
-    }
+    },
+  
+          //add removeContact as a key and function as value that takes a contact object to be removed from the contact-list.
+          removeContact: function(contact){
+            delete contact; 
+          }
+
+}
 }
 
 
