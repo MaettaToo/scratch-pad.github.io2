@@ -88,9 +88,30 @@ function makeContactList() {
   
           //add removeContact as a key and function as value that takes a contact object to be removed from the contact-list.
           removeContact: function(contact){
-            delete contact; 
-          }
-
+              // create loop to iterate over contacts list 
+              for( var i = 0; i < contacts.length; i++){
+              // create conditional stmt to determine if contact is in the contacts list
+              if(contacts[i] === contact){
+                // delete object from contacts array //contacts.splice(i);
+                  contacts.splice(i,1);
+                };
+            }
+          },
+    /* add  printAllContactNames() as key with the value of  Function that eturn a String 
+    formated with all the full-names of the separated with a line-break  
+    */
+   printAllContactNames: function(fullName){
+    //init var as empty array to contain output
+    var output = [];
+    // init for loop to iterae over contacts array
+    for(var i = 0; i < contacts.length; i++){
+      // push the namefirst + nameLast into output array
+        output.push(contacts[i]['nameFirst'] +' '+ contacts[i]['nameLast']);
+        }
+     //return string separated by new line
+    return output.join('\n');
+   
+   }
 }
 }
 
