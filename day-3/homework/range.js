@@ -23,6 +23,31 @@
  */
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
+    //I: function with two integers as params
+    //O: return array with all integers between two param integers in descending order if first param is greater than 2nd integer
+    //C: none
+    //E: none
+    //init var as empty array to contain output
+    var output = [];
+    //init conditional stmt to determine if start is greater than end
+    if(start > end){
+        //init loop to itertate over randge and push integers into ouput array
+        for(var i = start; i >= end; i--){
+        // push integers into output array
+        output.push(i);
+        }
+    
+    }
+    //init conditional stmt to determine if start is greater than end
+    if(start < end){
+         //init loop to itertate over randge and push integers into ouput array
+        for(var i = start; i <= end; i++){
+             // push integers into output array
+            output.push(i);
+        }
+    } //return output
+        return output;
+    
     
     
     
