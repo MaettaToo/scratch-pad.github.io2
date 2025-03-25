@@ -13,6 +13,25 @@
  */
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
+    //I: function that takes a base either string or number as param
+    //O: return function that tests whether a given is greater than the base
+    //C: none
+    //E: none
+    //return function
+return function(value){
+    //create conditional stmt to determine if value is greater than base 
+    if( value > base){
+        //return true
+        return true;
+    }//create conditional stmt to determine if value is greater than base 
+        else if (value < base){
+            return false;
+        }
+    }
+
+
+
+
     
    
     
@@ -27,7 +46,22 @@ function createGreaterThanFilter(base) {
  */
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    
+     // YOUR CODE BELOW HERE //
+    //I: function that takes a base either string or number as param
+    //O: return function that tests whether a given is less than the base
+    //C: none
+    //E: none
+    //return function
+return function(value){
+    //create conditional stmt to determine if value is less than base 
+    if( value < base){
+        //return true
+        return true;
+    }//create conditional stmt to determine if value is greater than base 
+        else if (value > base){
+            return false;
+        }
+    }
   
     
     
@@ -43,6 +77,19 @@ function createLessThanFilter(base) {
  */
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
+    //I: function takes one param as a single character of string
+    //O: return function that test whether a given string starts with the starts with character
+    //C: must be case insensitive
+    //E: none
+    // return the function
+    return function(string){
+    //code block - init conditional chain to determine if string starts with startsWith character
+    if(string[0].toUpperCase() === startsWith  || string[0].toLowerCase() === startsWith){
+        return true;
+    } else{ 
+    return false;
+    }
+    }
     
     
     
@@ -59,8 +106,19 @@ function createStartsWithFilter(startsWith) {
  */
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
-    
-    
+    //I: function takes one param as a single character of string
+    //O: return function that test whether a given string ends with the endsWith character
+    //C: must be case insensitive
+    //E: none
+    // return the function
+    return function(string){
+         //code block - init conditional chain to determine if string ends with endsWith character 
+         if(string[string.length - 1].toUpperCase() === endsWith  || string[string.length - 1].toLowerCase() === endsWith){
+            return true;
+        } else{ 
+        return false;
+        } 
+    }
     
     
     // YOUR CODE ABOVE HERE //
@@ -75,7 +133,19 @@ function createEndsWithFilter(endsWith) {
  */
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
+    //I:function that takes two params array of strings and a function 
+    //O: return the array of strings modified
+    //C:none
+    //E: none
+    // init var as array to contain output values 
+    var output = [];
     
+    //init for loop to iterate over strings array
+    for(var i = 0; i < strings.length; i++){
+         output = output.push(modify(strings));
+    
+    }
+    return output
     
     
     
