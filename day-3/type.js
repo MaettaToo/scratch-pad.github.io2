@@ -16,7 +16,16 @@
  */
 function isArray(value) {
     // YOUR CODE BELOW HERE //
-    
+    //I: function takes unknown value
+    //O: return boolean true  if value is array false if otherwise 
+    //c: none
+    //E: none
+    //init conditional stmt to determine if value is array
+    if(Array.isArray(value) === true){
+        return true;
+         }else{
+            return false;
+         }
     
     
     
@@ -38,8 +47,17 @@ function isArray(value) {
  */
 function isObject(value) {
     // YOUR CODE BELOW HERE //
-    
-
+    //I: function takes unknown value
+    //O: return boolean true  if value is an object of collection false if otherwise 
+    //c: none
+    //E: none
+    //init conditional stmt to determine if value is object
+     if(typeof value === 'object' && Array.isArray(value) === false && value !== null && value instanceof Date === false){
+        return true; //return true
+   } 
+        else{
+            return false;// return false
+        }
     
     
     
@@ -56,7 +74,22 @@ function isObject(value) {
  */
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
+    //I: function takes unknown value
+    //O: return boolean true if value is array or object as collection false if otherwise 
+    //c: none
+    //E: none
+    //init conditional stmt to determine if value is array or object
+    if(typeof value === 'object' && Array.isArray(value) === false && value !== null && value instanceof Date === false){
+        return true; //return true
+    } 
+//init conditional stmt to determine if value is array or object
+    if(Array.isArray(value) === true){
+       return true;
+         }else{
+            return false;
+        }
     
+
     
     
     
@@ -84,9 +117,39 @@ function isCollection(value) {
  */ 
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
+//I: function takes one input unknown value 
+//O: return the type of the value as a String
+//C:
+//E: 
+// create conditional stmt to determine the type of value 
+if( typeof value === 'string'){
+    return 'string';
+}
+if(Array.isArray(value) === true){
+    return 'array';
+}
+if(typeof value === 'object' && Array.isArray(value) === false && value !== null && value instanceof Date === false){
+    return 'object';
+} 
+if( typeof value === 'undefined'){
+    return 'undefined';
+}
+if( typeof value === 'number'){
+    return 'number';
+}
+if( typeof value === 'boolean'){
+    return 'boolean';
+}
+ if(value === null){
+    return 'null';
+ }
+ if( typeof value === 'function'){
+    return 'function';
+}
+if(value instanceof Date === true){
+    return 'date';
+}
+       
     
     // YOUR CODE ABOVE HERE //
 }
