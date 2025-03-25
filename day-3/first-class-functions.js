@@ -142,9 +142,12 @@ function modifyStrings(strings, modify) {
     
     //init for loop to iterate over strings array
     for(var i = 0; i < strings.length; i++){
-         output = output.push(modify(strings));
+        //push modified strings at strings i into output array
+        output.push(modify(strings[i]));
+        
     
     }
+    //return output
     return output
     
     
@@ -166,6 +169,21 @@ function modifyStrings(strings, modify) {
  */
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
+    //I:  function that takes an array of strings and a function that tests the string as the params
+    //O: return boolean true if strings pass the test, return false if fail
+    //C: none
+    //E: none
+    //init loop to iterate over strings
+    for(var i = 0; i < strings.length; i++){
+        //init conditional stmt that invoke function to test string
+            if (test(strings[i]) !== true ){
+            return false;
+        } 
+        
+        }
+    
+    // return true if test passes 
+return true; 
     
     
     
