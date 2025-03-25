@@ -2,8 +2,6 @@
 
 'use strict';
 
-const { includes } = require("lodash");
-
 /**
  * 4: Contact List // Contacts
  * 
@@ -68,51 +66,47 @@ function makeContactList() {
       addContact: function(contact){
         contacts.push(contact)
       },
-      /*add key/value pair as function that takes a full-name String,returns the contact object if found in the contacts-list, or, 
+      /*add key/value pair as a function that takes a full-name String,returns the contact object if found in the contacts-list, or, 
       undefined if the fullName does not match any contacts in the list.
       */
       findContact: function(fullName){
-        //init for loop to iterate over contacts array 
+        // init loop to iterate through contacts array
         for (var i = 0; i < contacts.length; i++){
-          //create conditional stmt to determine if fullName is part of the contacts list
-          if (fullName.includes(contacts[i]['nameFirst']) && fullName.includes( contacts[i]['nameLast'])){
-            //return object from contacts array  
-            return contacts[i];
+          //create conditional stmt to determine if fullName is part of the list
+          if (fullName.includes(contacts[i]['nameFirst']) && fullName.includes(contacts[i]['nameLast'])){
+            //return object from contacts array
+          return contacts[i];
           }  
-                else{// return undefined
-                    return undefined;
+            else{
+              //return undefined
+              return undefined;
               }
-
-      }
-    },
-  
-          //add removeContact as a key and function as value that takes a contact object to be removed from the contact-list.
-          removeContact: function(contact){
-              // create loop to iterate over contacts list 
-              for( var i = 0; i < contacts.length; i++){
-              // create conditional stmt to determine if contact is in the contacts list
-              if(contacts[i] === contact){
-                // delete object from contacts array //contacts.splice(i);
-                  contacts.splice(i,1);
-                };
             }
-          },
-    /* add  printAllContactNames() as key with the value of  Function that eturn a String 
-    formated with all the full-names of the separated with a line-break  
-    */
-   printAllContactNames: function(fullName){
-    //init var as empty array to contain output
-    var output = [];
-    // init for loop to iterae over contacts array
-    for(var i = 0; i < contacts.length; i++){
-      // push the namefirst + nameLast into output array
-        output.push(contacts[i]['nameFirst'] +' '+ contacts[i]['nameLast']);
+      },
+     // add key removeContact(contact) value function that takes a contact object to be removed from the contact-list. 
+     removeContact: function(contact){
+      // create loop to iterate over contacts list 
+      for(var i = 0; i < contacts.length; i++){
+        //create conditional stmt to determine if contact is in the contacts list 
+        if(contacts[i] === contact){
+          //delete object from contacts array contacts[i]
+          contacts.splice(i,1);
         }
-     //return string separated by new line
-    return output.join('\n');
-   
-   }
-}
+      }
+     },
+     // add a printAllContactNames as a key  value is a function that should return a String formated with all the full-names of the separated with a line-break
+     printAllContactNames: function(fullName){
+      //init var as empty array to contain output
+      var output = [];
+      // init for loop to iterate over contacts array
+      for(var i = 0; i < contacts.length; i++){
+        //push nameFirst + nameLast into output tray
+        output.push(contacts[i]['nameFirst'] + ' ' + contacts[i]['nameLast']);
+      }
+      // return string separated by new line
+      return output.join('\n');
+     }
+    }
 }
 
 
